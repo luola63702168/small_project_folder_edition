@@ -1,2 +1,2 @@
-# small_project_folder_edition
-A folder, a small project.Unrestricted programming language.
+- A folder, a small project.Unrestricted programming language.
+- 每个文件夹都是一个小项目，这些项目不限制编程语言
