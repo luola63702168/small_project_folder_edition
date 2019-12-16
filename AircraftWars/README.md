@@ -1,0 +1,3 @@
+- 直接下载该文件夹
+- 配置好需要的环境（pip install pygame）
+- python plane_main.py
