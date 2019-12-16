@@ -1,0 +1,6 @@
+2018-04-25 16:30:26,273 - mini_frame.py[line:235] - INFO: 访问的是，/index.html
+2018-04-25 16:30:28,883 - mini_frame.py[line:235] - INFO: 访问的是，/center.html
+2018-04-25 16:31:13,294 - mini_frame.py[line:235] - INFO: 访问的是，/center.html
+2018-04-25 16:31:39,169 - mini_frame.py[line:235] - INFO: 访问的是，/center.html
+2018-04-25 16:32:05,858 - mini_frame.py[line:235] - INFO: 访问的是，/centasader.html
+2018-04-25 16:32:05,859 - mini_frame.py[line:251] - WARNING: 没有对应的函数....
