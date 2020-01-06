@@ -17,8 +17,7 @@ import (
 // Request the url, to get the resp, save file
 
 var wg sync.WaitGroup
-var wg1 sync.WaitGroup
-var wg2 sync.WaitGroup
+
 
 // Tool function, which returns the content corresponding to url
 func HandleUrl(url string) (Content string) {
@@ -48,7 +47,7 @@ func SaveImage(imageUrl string) {
 		n, _ := resp.Body.Read(buf)
 		if n==0{
 			fmt.Println("文件保存完毕")
-			wg2.Done()
+			wg.Done()
 			break
 		}
 		_, _ = f.Write(buf[:n])
@@ -64,10 +63,9 @@ func HandleDetail(detailUrl string) {
 	for _, i := range imageTempSlice {
 		imgUrl := reg2.FindString(i)
 		go SaveImage(imgUrl)
-		wg2.Add(1)
+		wg.Add(1)
 	}
-	wg2.Wait()
-	wg1.Done()
+	wg.Done()
 }
 
 // Process each list page and extract the details page url
@@ -78,9 +76,8 @@ func HandleListContent(listContent string) {
 	seedUrl := "https://tieba.baidu.com/p/"
 	for _, i := range resultSlice {
 		go HandleDetail(seedUrl + reg2.FindString(i))
-		wg1.Add(1)
+		wg.Add(1)
 	}
-	wg1.Wait()
 	wg.Done()
 }
 
