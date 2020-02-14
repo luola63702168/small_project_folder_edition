@@ -161,3 +161,4 @@ if __name__ == '__main__':
     ll.remove_2(7)
     ll.travel()
     print(ll())
+    
