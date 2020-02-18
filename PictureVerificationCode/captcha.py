@@ -223,3 +223,4 @@ captcha = Captcha.instance()
 if __name__ == '__main__':
     print(captcha.generate_captcha())
 
+
