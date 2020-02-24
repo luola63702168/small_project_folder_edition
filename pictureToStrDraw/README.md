@@ -4,5 +4,5 @@
     - 代码中很容易看明白
 - 关键环境：
     - python 3.65 Pillow 7.0.0
-- 命令行测试
+- 命令行测试:
     - python pic.py -i ./obj_fie/file.png

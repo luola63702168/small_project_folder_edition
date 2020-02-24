@@ -50,7 +50,7 @@ class TxTDraw(object):
         gray = int(2126 * r + 7152 * g + 722 * b) / 10000
 
         # 字符集只有,70的映射操作。
-        tmp_gray = 256 + 1  # 灰度值范围为 0-255即最大为256，又因为int的退一法操作，所以再加1，
+        tmp_gray = 256 + 1  # 灰度值范围为 0-255即最大为256，又因为int的退一法操作，所以再加1.
         unit = tmp_gray / len(self.STR_MAP)  # 4
         return self.STR_MAP[int(gray / unit)]
 
