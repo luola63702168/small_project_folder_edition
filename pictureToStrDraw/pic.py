@@ -10,7 +10,7 @@ from PIL import Image
 # 参数flag
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', help="请输入要转换的图片文件路径，通过参数-i 或者 -input：")
-parser.add_argument('-o', '--output', help="请输入字符画的路径，参数为-0 或者 -output：")
+parser.add_argument('-o', '--output', help="请输入字符画的路径，参数为-o 或者 -output：")
 parser.add_argument('-w', '--width', type=int, default=80, help="可通过-w或者--width指定输出字符画的宽度，默认为80")
 parser.add_argument('-hi', '--height', type=int, default=80, help="可通过-hi或者--height指定输出字符画的高度，默认为80")
 
@@ -77,9 +77,10 @@ class TxTDraw(object):
         :return:字符画字符串
         """
         txt = self.draw_pic()
-        # 用于输出文件的命名
+        # 用于输出文件的默认命名
         txt_name = os.path.basename(IMG)
-        with open(f"./obj_fie/{txt_name.replace('.', '')}.txt", 'w') as f:
+        # 如果OUTPUT有值就用OUTPUT，没有就用txt_name.replace('.', '')+'.txt'。
+        with open(f"./obj_fie/{OUTPUT or txt_name.replace('.', '')+'.txt'}", 'w') as f:
             f.write(txt)
         return txt
 
